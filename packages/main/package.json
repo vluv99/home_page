@@ -1,7 +1,10 @@
 {
     "name": "main",
-    "description": "eleventy blog",
+    "description": "Fancy background",
     "version": "1.0.0",
+    "dependency": {
+      "assets": "*"
+    },
     "scripts": {
       "build": "eleventy --input=./src --output=../../dist/packages/main",
       "serve": "eleventy --serve --input=./src --output=../../dist/packages/main"
