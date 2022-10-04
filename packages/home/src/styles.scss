@@ -19,7 +19,7 @@ html {
 body {
     font-family: inherit;
     line-height: inherit;
-    margin: 0;
+    margin: 20px;
     background: #001220;
 }
 h1,
@@ -28,6 +28,16 @@ p,
 pre {
     margin: 0;
 }
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
 
 /* Light mode */
 @media (prefers-color-scheme: light) {
@@ -44,3 +54,4 @@ pre {
         color: white;
     }
 }
+
