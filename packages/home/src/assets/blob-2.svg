@@ -1,0 +1,28 @@
+<svg id="visual" viewBox="0 0 960 540" width="960" height="540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<rect x="0" y="0" width="960" height="540" fill="#001220">
+	</rect>
+	<defs>
+		<linearGradient id="grad1_0" x1="43.8%" y1="0%" x2="100%" y2="100%">
+			<stop offset="14.444444444444446%" stop-color="#001220" stop-opacity="1">
+			</stop>
+			<stop offset="85.55555555555554%" stop-color="#001220" stop-opacity="1">
+			</stop>
+		</linearGradient>
+	</defs>
+	<defs>
+		<linearGradient id="grad2_0" x1="0%" y1="0%" x2="56.3%" y2="100%">
+			<stop offset="14.444444444444446%" stop-color="#001220" stop-opacity="1">
+			</stop>
+			<stop offset="85.55555555555554%" stop-color="#001220" stop-opacity="1">
+			</stop>
+		</linearGradient>
+	</defs>
+	<g transform="translate(960, 0)">
+		<path d="M0 397C-38.4 376.2 -76.7 355.4 -109.4 336.7C-142 318 -169 301.3 -212.2 292.1C-255.4 282.8 -315 280.9 -349.5 253.9C-384 227 -393.6 175 -395.6 128.6C-397.7 82.1 -392.4 41 -387 0L0 0Z" fill="#FBAE3C">
+		</path>
+	</g>
+	<g transform="translate(0, 540)">
+		<path d="M0 -432C43.1 -417.8 86.3 -403.7 126.1 -388C165.9 -372.4 202.3 -355.3 242.8 -334.1C283.2 -312.9 327.7 -287.7 341.4 -248C355.1 -208.4 338.2 -154.4 340.5 -110.6C342.8 -66.9 364.4 -33.4 386 0L0 0Z" fill="#FBAE3C">
+		</path>
+	</g>
+</svg>
