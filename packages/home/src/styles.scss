@@ -1,5 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
 
-body{
-    background: #001220!important;
+:root {
+    --dark-background-color: #001220;
+    --light-background-color: #f3f5f5; //#fff; //rgba(55, 65, 81, 1);
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+    line-height: 1.5;
+    tab-size: 4;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: inherit;
+    line-height: inherit;
+    margin: 0;
+    background: #001220;
+}
+h1,
+h2,
+p,
+pre {
+    margin: 0;
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: var(--light-background-color);
+        color: black;
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark-background-color);
+        color: white;
+    }
 }
