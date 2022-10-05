@@ -1,7 +1,7 @@
 import './app.grid-layout.scss';
 
 
-export class AppGrid extends HTMLElement {
+export class AppGridLayout extends HTMLElement {
     public static observedAttributes = [];
 
     connectedCallback() {
@@ -126,4 +126,4 @@ export class AppGrid extends HTMLElement {
     }
 
 }
-customElements.define('app-grid-layout', AppGrid);
+customElements.define('app-grid-layout', AppGridLayout);
