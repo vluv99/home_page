@@ -7,7 +7,7 @@ export class AppGrid extends HTMLElement {
   private colNum = 5;
   private rowNum = 5;
   private gap = 8;
-  private itemPos = [{x:0, y:2, w:2, h:1}, {x:3, y:4, w:1, h:2}, {x:4, y:4, w:2, h:2}];
+  private itemPos = [{x:0, y:2, w:2, h:1}, {x:3, y:4, w:1, h:2}, {x:4, y:3, w:2, h:2}];
 
   connectedCallback() {
     const container = document.createElement("div");
@@ -42,7 +42,6 @@ export class AppGrid extends HTMLElement {
    * @returns number (int)
    */
   calcGridItemHeight(){
-
     const bodyMarginHeights = parseInt(window.getComputedStyle(document.getElementsByTagName("body")[0]).getPropertyValue('margin-top'))
     const gapHeights = this.rowNum*this.gap
     return (window.innerHeight - bodyMarginHeights*2 - gapHeights) /this.rowNum
