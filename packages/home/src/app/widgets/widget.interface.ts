@@ -1,11 +1,11 @@
 
 
 export interface IWidget {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-    widgetType: WidgetType;
+    x: string;
+    y: string;
+    width: string;
+    height: string;
+    widgetType: string;
 }
 
 export enum WidgetType{
