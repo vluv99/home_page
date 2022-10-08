@@ -5,8 +5,12 @@ import './app.background.scss';
 export class AppBackground extends HTMLElement {
   public static observedAttributes = [];
 
+  get fillColor(){
+    return this.getAttribute("fillColor");
+  }
+
   connectedCallback() {
-    const fillColor = '#FBAE3C';
+    const fillColor = this.fillColor;//'#FBAE3C';
     this.innerHTML = `
       <div class="background--container">
       <svg class="image" id="background" viewBox="0 0 1920 1080" width="1920" height="1080" xmlns="http://www.w3.org/2000/svg"
