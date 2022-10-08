@@ -1,4 +1,7 @@
+import { WidgetType } from '../widgets/widget.interface';
 import './app.layout.scss';
+
+type WidgetPlacement = {x:number, y:number, w:number, h:number, widgetType:WidgetType}
 
 export class AppLayout extends HTMLElement {
   public static observedAttributes = [];
@@ -6,38 +9,39 @@ export class AppLayout extends HTMLElement {
   private colNum = 5;
   private rowNum = 5;
   private gap = 8;
-  private itemPos = [{x:0, y:2, w:2, h:1, widgetType:0}, {x:3, y:4, w:1, h:2, widgetType:0}, {x:4, y:3, w:2, h:2, widgetType:0}];
+  private itemPos : WidgetPlacement[] = [{x:0, y:2, w:1, h:1, widgetType:WidgetType.weather}, {x:4, y:4, w:1, h:2, widgetType:WidgetType.weather}, {x:4, y:3, w:2, h:2, widgetType:WidgetType.weather}];
 
   connectedCallback() {
     const container = document.createElement("div");
     container.classList.add("layout--container");
 
-    //set grid container layout
+    // Set grid container layout
     container.style.gap = `${this.gap}px`
-    container.style.gridTemplateColumns = `repeat(${this.colNum}, 1fr)`;
-    container.style.gridTemplateRows = `repeat(${this.rowNum}, ${this.calcGridItemHeight()}px)`;
+    container.style.gridTemplateColumns = `repeat(auto-fill, 60px)`;
+    container.style.gridTemplateRows = `repeat(auto-fill, 60px)`;
 
-    for (let i = 0; i < this.itemPos.length; i++) {
-      /*const item = document.createElement("div");
-      item.id = `gridItem_${i}`;
-      item.classList.add("item");
-      item.classList.add("empty");
-      item.classList.add("noselect");
-      item.innerText = (i+1).toString();
-*/
-      let widget;
-      switch (this.itemPos[i].widgetType) {
-        case 0:
-          widget = <HTMLElement>document.createElement("widget-weather")
+    for (const element of this.itemPos) {
+      
+      const widget: HTMLElement = document.createElement(element.widgetType);
+      /*
+      switch (element.widgetType) {
+        case WidgetType.weather:
+          widget = document.createElement("widget-weather")
 
           break;
       }
+      */
+      //set grid item position
+      widget.style.gridColumnStart = element.x.toString();
+      widget.style.gridColumnEnd = "span " + element.w.toString();
+      widget.style.gridRowStart = element.y.toString();
+      widget.style.gridRowEnd = "span " + element.h.toString();
 
-      widget.setAttribute('x', this.itemPos[i].x);
-      widget.setAttribute('y', this.itemPos[i].y);
-      widget.setAttribute('width', this.itemPos[i].w);
-      widget.setAttribute('height', this.itemPos[i].h);
-      widget.setAttribute('widgetType', this.itemPos[i].widgetType);      
+      widget.setAttribute('x', element.x.toString());
+      widget.setAttribute('y', element.y.toString());
+      widget.setAttribute('width', element.w.toString());
+      widget.setAttribute('height', element.h.toString());
+      widget.setAttribute('widgetType', element.widgetType.toString());      
 
       container.appendChild(widget);
     }
