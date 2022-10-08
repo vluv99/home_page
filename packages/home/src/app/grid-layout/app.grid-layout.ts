@@ -51,77 +51,79 @@ export class AppGrid extends HTMLElement {
   <div id='div8' class='item divRec'><div class='inside'>item 8</div></div>
 </section>`;*/
 
+        this.sortable( document.getElementById('list'), function (item){
+            /* console.log(item); */
+        });
+    }
+
+    sortable(section, onUpdate){
+        let dragEl, nextEl, newPos;
+    
+        const oldPos = [...section.children].map(item => {
+            item.draggable = true
+            const pos = document.getElementById(item.id).getBoundingClientRect();
+            return pos;
+        });
+    
+        function _onDragOver(e) {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+    
+            const target = e.target;
+            if (target && target !== dragEl && target.nodeName == 'DIV') {
+                if (target.classList.contains('inside')) {
+                    e.stopPropagation();
+                } else {
+                    //getBoundinClientRect contains location-info about the element (relative to the viewport)
+                    const targetPos = target.getBoundingClientRect();
+                    //checking that dragEl is dragged over half the target y-axis or x-axis. (therefor the .5)
+                    const next = (e.clientY - targetPos.top) / (targetPos.bottom - targetPos.top) > .5 || (e.clientX - targetPos.left) / (targetPos.right - targetPos.left) > .5;
+                    section.insertBefore(dragEl, next && target.nextSibling || target);
+    
+                    /*  console.log("oldPos:" + JSON.stringify(oldPos));
+                     console.log("newPos:" + JSON.stringify(newPos)); */
+                    /* console.log(newPos.top === oldPos.top ? 'They are the same' : 'Not the same'); */
+    
+                    //console.log(oldPos);
+                }
+            }
+        }
+    
+        function _onDragEnd(evt) {
+            evt.preventDefault();
+            newPos = [...section.children].map(child => {
+                const pos = document.getElementById(child.id).getBoundingClientRect();
+                return pos;
+            });
+            //console.log(newPos);
+            dragEl.classList.remove('ghost');
+            section.removeEventListener('dragover', _onDragOver, false);
+            section.removeEventListener('dragend', _onDragEnd, false);
+    
+            nextEl !== dragEl.nextSibling ? onUpdate(dragEl) : false;
+        }
+    
+        section.addEventListener('dragstart', function (e) {
+            dragEl = e.target;
+            nextEl = dragEl.nextSibling;
+            /* dragGhost = dragEl.cloneNode(true);
+            dragGhost.classList.add('hidden-drag-ghost'); */
+    
+            /*  document.body.appendChild(dragGhost);
+             e.dataTransfer.setDragImage(dragGhost, 0, 0); */
+    
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('Text', dragEl.textContent);
+    
+            section.addEventListener('dragover', _onDragOver, false);
+            section.addEventListener('dragend', _onDragEnd, false);
+    
+            setTimeout(function () {
+                dragEl.classList.add('ghost');
+            }, 0)
+    
+        });
     }
 
 }
 customElements.define('app-grid-layout', AppGrid);
-
-
-export function sortable(section, onUpdate){
-    let dragEl, nextEl, newPos;
-
-    const oldPos = [...section.children].map(item => {
-        item.draggable = true
-        const pos = document.getElementById(item.id).getBoundingClientRect();
-        return pos;
-    });
-
-    function _onDragOver(e) {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = 'move';
-
-        const target = e.target;
-        if (target && target !== dragEl && target.nodeName == 'DIV') {
-            if (target.classList.contains('inside')) {
-                e.stopPropagation();
-            } else {
-                //getBoundinClientRect contains location-info about the element (relative to the viewport)
-                const targetPos = target.getBoundingClientRect();
-                //checking that dragEl is dragged over half the target y-axis or x-axis. (therefor the .5)
-                const next = (e.clientY - targetPos.top) / (targetPos.bottom - targetPos.top) > .5 || (e.clientX - targetPos.left) / (targetPos.right - targetPos.left) > .5;
-                section.insertBefore(dragEl, next && target.nextSibling || target);
-
-                /*  console.log("oldPos:" + JSON.stringify(oldPos));
-                 console.log("newPos:" + JSON.stringify(newPos)); */
-                /* console.log(newPos.top === oldPos.top ? 'They are the same' : 'Not the same'); */
-
-                //console.log(oldPos);
-            }
-        }
-    }
-
-    function _onDragEnd(evt) {
-        evt.preventDefault();
-        newPos = [...section.children].map(child => {
-            const pos = document.getElementById(child.id).getBoundingClientRect();
-            return pos;
-        });
-        //console.log(newPos);
-        dragEl.classList.remove('ghost');
-        section.removeEventListener('dragover', _onDragOver, false);
-        section.removeEventListener('dragend', _onDragEnd, false);
-
-        nextEl !== dragEl.nextSibling ? onUpdate(dragEl) : false;
-    }
-
-    section.addEventListener('dragstart', function (e) {
-        dragEl = e.target;
-        nextEl = dragEl.nextSibling;
-        /* dragGhost = dragEl.cloneNode(true);
-        dragGhost.classList.add('hidden-drag-ghost'); */
-
-        /*  document.body.appendChild(dragGhost);
-         e.dataTransfer.setDragImage(dragGhost, 0, 0); */
-
-        e.dataTransfer.effectAllowed = 'move';
-        e.dataTransfer.setData('Text', dragEl.textContent);
-
-        section.addEventListener('dragover', _onDragOver, false);
-        section.addEventListener('dragend', _onDragEnd, false);
-
-        setTimeout(function () {
-            dragEl.classList.add('ghost');
-        }, 0)
-
-    });
-}
