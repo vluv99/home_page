@@ -1,13 +1,12 @@
 import './app.layout.scss';
 
-
 export class AppLayout extends HTMLElement {
   public static observedAttributes = [];
 
   private colNum = 5;
   private rowNum = 5;
   private gap = 8;
-  private itemPos = [{x:0, y:2, w:2, h:1}, {x:3, y:4, w:1, h:2}, {x:4, y:3, w:2, h:2}];
+  private itemPos = [{x:0, y:2, w:2, h:1, widgetType:0}, {x:3, y:4, w:1, h:2, widgetType:0}, {x:4, y:3, w:2, h:2, widgetType:0}];
 
   connectedCallback() {
     const container = document.createElement("div");
@@ -19,20 +18,28 @@ export class AppLayout extends HTMLElement {
     container.style.gridTemplateRows = `repeat(${this.rowNum}, ${this.calcGridItemHeight()}px)`;
 
     for (let i = 0; i < this.itemPos.length; i++) {
-      const item = document.createElement("div");
+      /*const item = document.createElement("div");
       item.id = `gridItem_${i}`;
       item.classList.add("item");
       item.classList.add("empty");
       item.classList.add("noselect");
       item.innerText = (i+1).toString();
+*/
+      let widget;
+      switch (this.itemPos[i].widgetType) {
+        case 0:
+          widget = <HTMLElement>document.createElement("widget-weather")
 
-      //set grid item position
-      item.style.gridColumnStart = this.itemPos[i].x.toString();
-      item.style.gridColumnEnd = "span " + this.itemPos[i].w.toString();
-      item.style.gridRowStart = this.itemPos[i].y.toString();
-      item.style.gridRowEnd = "span " + this.itemPos[i].h.toString();
+          break;
+      }
 
-      container.appendChild(item);
+      widget.setAttribute('x', this.itemPos[i].x);
+      widget.setAttribute('y', this.itemPos[i].y);
+      widget.setAttribute('width', this.itemPos[i].w);
+      widget.setAttribute('height', this.itemPos[i].h);
+      widget.setAttribute('widgetType', this.itemPos[i].widgetType);      
+
+      container.appendChild(widget);
     }
 
     this.appendChild(container);
