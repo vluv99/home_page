@@ -39,13 +39,5 @@ export class AppBackground extends HTMLElement {
         `;
 
   }
-
-  startAnimation() {
-    const l1 = <HTMLElement>document.getElementById("left-1")
-    const l2 = <HTMLElement>document.getElementById("left-2")
-
-
-
-  }
 }
 customElements.define('app-background', AppBackground);

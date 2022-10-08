@@ -14,7 +14,7 @@
         "compiler": "babel",
         "main": "packages/home/src/main.ts",
         "tsConfig": "packages/home/tsconfig.app.json",
-        "assets": ["packages/home/src/favicon.ico", "packages/home/src/assets/**/*"],
+        "assets": ["packages/home/src/favicon.ico", "packages/home/src/assets/"],
         "index": "packages/home/src/index.html",
         "baseHref": "/",
         "polyfills": "packages/home/src/polyfills.ts",
@@ -41,7 +41,7 @@
     "serve": {
       "executor": "@nrwl/webpack:dev-server",
       "options": {
-        "buildTarget": "home:build"
+        "buildTarget": "home:build:development"
       },
       "configurations": {
         "production": {
