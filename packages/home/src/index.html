@@ -8,75 +8,13 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/kute.js/2.0.0/kute.min.js"></script>
-
 </head>
 
 <body>
   <!--<home-page-root></home-page-root>-->
-  <!--<app-background></app-background>-->
+  <app-background></app-background>
 
-  <main style="/*aspect-ratio: 960/540;*/">
-    <!--<img src="${src}" />-->
-    <svg id="visual" viewBox="0 0 960 540" height="100vh" width="100%"  xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-      <defs>
-        <linearGradient id="grad1_0" x1="43.8%" y1="0%" x2="100%" y2="100%">
-          <stop offset="14.444444444444446%" stop-color="#001220" stop-opacity="1"></stop>
-          <stop offset="85.55555555555554%" stop-color="#001220" stop-opacity="1"></stop>
-        </linearGradient>
-      </defs>
-      <defs>
-        <linearGradient id="grad2_0" x1="0%" y1="0%" x2="56.3%" y2="100%">
-          <stop offset="14.444444444444446%" stop-color="#001220" stop-opacity="1"></stop>
-          <stop offset="85.55555555555554%" stop-color="#001220" stop-opacity="1"></stop>
-        </linearGradient>
-      </defs>
-
-      <g transform="translate(960, 0)">
-        <path id="left-1"
-          d="M0 349C-44.4 373.6 -88.9 398.3 -128.2 394.7C-167.6 391.1 -202 359.3 -242.8 334.1C-283.5 308.9 -330.8 290.3 -349.5 253.9C-368.2 217.5 -358.5 163.3 -363.3 118C-368.1 72.8 -387.6 36.4 -407 0L0 0Z"
-          fill="#FBAE3C"></path>
-      </g>
-      <g transform="translate(0, 540)">
-        <path id="right-1"
-          d="M0 -432C37.7 -398.6 75.3 -365.1 112.8 -347.1C150.3 -329.2 187.5 -326.7 226.9 -312.3C266.3 -297.9 307.7 -271.5 322 -233.9C336.3 -196.3 323.3 -147.5 328.1 -106.6C332.9 -65.7 355.5 -32.9 378 0L0 0Z"
-          fill="#FBAE3C"></path>
-      </g>
-
-
-      <g transform="translate(960, 0)" style="visibility: hidden">
-        <path id="left-2" d="M0 397C-38.4 376.2 -76.7 355.4 -109.4 336.7C-142 318 -169 301.3 -212.2 292.1C-255.4 282.8 -315 280.9 -349.5 253.9C-384 227 -393.6 175 -395.6 128.6C-397.7 82.1 -392.4 41 -387 0L0 0Z" fill="#FBAE3C">
-        </path>
-      </g>
-      <g transform="translate(0, 540)" style="visibility: hidden">
-        <path id="right-2" d="M0 -432C43.1 -417.8 86.3 -403.7 126.1 -388C165.9 -372.4 202.3 -355.3 242.8 -334.1C283.2 -312.9 327.7 -287.7 341.4 -248C355.1 -208.4 338.2 -154.4 340.5 -110.6C342.8 -66.9 364.4 -33.4 386 0L0 0Z" fill="#FBAE3C">
-        </path>
-      </g>
-
-    </svg>
-
-    <script>
-      const moveLeft = KUTE.fromTo(
-        '#left-1',
-        { path: '#left-1' },
-        { path: '#left-2' },
-        { repeat: 999, duration: 3000, yoyo: true }
-      )
-
-      moveLeft.start();
-
-      const moveRight = KUTE.fromTo(
-        '#right-1',
-        { path: '#right-1' },
-        { path: '#right-2' },
-        { repeat: 999, duration: 3000, yoyo: true }
-      )
-
-      moveRight.start();
-    </script>
-  </main>
+  
 
 </body>
 
