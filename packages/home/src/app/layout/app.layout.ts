@@ -1,7 +1,7 @@
 import './app.layout.scss';
 
 
-export class AppGrid extends HTMLElement {
+export class AppLayout extends HTMLElement {
   public static observedAttributes = [];
 
   private colNum = 5;
@@ -20,6 +20,7 @@ export class AppGrid extends HTMLElement {
 
     for (let i = 0; i < this.itemPos.length; i++) {
       const item = document.createElement("div");
+      item.id = `gridItem_${i}`;
       item.classList.add("item");
       item.classList.add("empty");
       item.classList.add("noselect");
@@ -48,4 +49,4 @@ export class AppGrid extends HTMLElement {
   }
 
 }
-customElements.define('app-layout', AppGrid);
+customElements.define('app-layout', AppLayout);
