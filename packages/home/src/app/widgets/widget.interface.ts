@@ -9,5 +9,5 @@ export interface IWidget {
 }
 
 export enum WidgetType{
-    "weather"= 1
+    weather = "widget-weather",
 }
