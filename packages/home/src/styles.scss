@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+// importing core styling file
+//@import "@fontawesome/fontawesome/scss/fontawesome.scss";
+
+// our project needs Classic Solid, Brands, and Sharp Solid 
+/*@import "./fontawesome/scss/solid.scss";
+@import "./fontawesome/scss/brands.scss";
+@import "./fontawesome/scss/sharp-solid.scss";
+*/
 :root {
     --dark-background-color: #001220;
     --light-background-color: #f3f5f5; //#fff; //rgba(55, 65, 81, 1);
