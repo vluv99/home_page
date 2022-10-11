@@ -12,8 +12,10 @@ export class AppLayout extends HTMLElement {
   private cellSize = 60;
 
   private staticItems: WidgetPlacement[] = [
-    { x: this.calcColumnCount(), y: 1, w: 1, h: 1, widgetType: WidgetType.weather },
-    { x: this.calcColumnCount() - 1, y: 1, w: 1, h: 1, widgetType: WidgetType.weather },
+    { x: this.calcColumnCount(), y: 1, w: 1, h: 1, widgetType: WidgetType.user },
+    { x: this.calcColumnCount() - 1, y: 1, w: 1, h: 1, widgetType: WidgetType.settings },
+    { x: this.calcColumnCount() - 2, y: 1, w: 1, h: 1, widgetType: WidgetType.move },
+
   ];
   private itemPos: WidgetPlacement[] = [...this.staticItems, { x: 0, y: 2, w: 1, h: 1, widgetType: WidgetType.weather }, { x: 10, y: 4, w: 5, h: 2, widgetType: WidgetType.weather }, { x: 4, y: 3, w: 2, h: 2, widgetType: WidgetType.weather }];
 

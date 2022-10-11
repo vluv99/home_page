@@ -10,4 +10,7 @@ export interface IWidget {
 
 export enum WidgetType{
     weather = "widget-weather",
+    settings = "widget-settings",
+    move = "widget-move",
+    user = 'widget-user',
 }

@@ -14,7 +14,7 @@ export class WidgetWeather extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <div class="widget--container">
-      <app-icon fillColor="white" width="40" iconPath="${IconPaths['fa-gear']}"></app-icon>   
+      <app-icon fillColor="white" width="40" iconPath="${IconPaths['cloud-sun-rain']}"></app-icon>   
       </div>
         `;
 
