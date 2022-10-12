@@ -17,7 +17,10 @@ export class AppLayout extends HTMLElement {
     { x: this.calcColumnCount() - 2, y: 1, w: 1, h: 1, widgetType: WidgetType.move },*/
     { x: this.calcColumnCount()-2, y: 1, w: 3, h: 1, widgetType: WidgetType.staticWidget }
   ];
-  private itemPos: WidgetPlacement[] = [...this.staticItems, { x: 0, y: 2, w: 1, h: 1, widgetType: WidgetType.weather }, { x: 10, y: 4, w: 5, h: 2, widgetType: WidgetType.weather }, { x: 4, y: 3, w: 2, h: 2, widgetType: WidgetType.weather }];
+  private itemPos: WidgetPlacement[] = [...this.staticItems, 
+    { x: 0, y: 2, w: 1, h: 1, widgetType: WidgetType.weather }, 
+    { x: 13, y: 6, w: 5, h: 6, widgetType: WidgetType.xkcd }, 
+    { x: 4, y: 3, w: 2, h: 2, widgetType: WidgetType.weather }];
 
   connectedCallback() {
     const container = document.createElement("div");
