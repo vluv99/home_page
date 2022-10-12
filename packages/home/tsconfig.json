@@ -1,8 +1,8 @@
 {
   "extends": "../../tsconfig.base.json",
-  "files": [],
+  "files": ["./src/types.d.ts"],
   "include": [],
-  "references": [
+  "references": [ 
     {
       "path": "./tsconfig.app.json"
     },

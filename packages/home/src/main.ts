@@ -9,6 +9,8 @@ import './app/widgets/staticWidgets/settings/widget.settings';
 import './app/widgets/staticWidgets/move/widget.move';
 import './app/widgets/staticWidgets/user/widget.user';
 
+import './app/widgets/staticWidgets/widget.static';
+
 import './app/icon/app-icon';
 
 

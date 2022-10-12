@@ -13,4 +13,5 @@ export enum WidgetType{
     settings = "widget-settings",
     move = "widget-move",
     user = 'widget-user',
+    staticWidget = "widget-static",
 }
