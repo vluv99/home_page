@@ -15,4 +15,5 @@ export enum WidgetType{
     user = 'widget-user',
     staticWidget = "widget-static",
     xkcd = "widget-xkcd",
+    clock = "widget-clock",
 }

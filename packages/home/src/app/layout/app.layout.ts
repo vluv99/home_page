@@ -20,7 +20,7 @@ export class AppLayout extends HTMLElement {
   private itemPos: WidgetPlacement[] = [...this.staticItems, 
     { x: 0, y: 2, w: 1, h: 1, widgetType: WidgetType.weather }, 
     { x: 13, y: 6, w: 5, h: 6, widgetType: WidgetType.xkcd }, 
-    { x: 4, y: 3, w: 2, h: 2, widgetType: WidgetType.weather }];
+    { x: 4, y: 3, w: 2, h: 2, widgetType: WidgetType.clock }];
 
   connectedCallback() {
     const container = document.createElement("div");

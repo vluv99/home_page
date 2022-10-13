@@ -4,11 +4,6 @@ import '../widget.scss';
 
 import style from './widget.xkcd.scss?lit';
 
-
-
-
-
-
 @customElement('widget-xkcd')
 export class WidgetXkcd extends LitElement {
 
@@ -30,7 +25,7 @@ export class WidgetXkcd extends LitElement {
   `;
 
   render() {
-
+    console.log(this.json)
     
 
     return html`
