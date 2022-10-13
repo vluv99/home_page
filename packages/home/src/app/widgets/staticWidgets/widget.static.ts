@@ -1,16 +1,16 @@
-import { LitElement, css, html } from 'lit';
+import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 //import '../widget.scss';
 
 import './widget.static.scss';
 
-import style from './widget.static.scss?lit';
+//import style from './widget.static.scss?lit';
 
 
 @customElement('widget-static')
 export class WidgetStatic extends LitElement {
   // Define scoped styles right with your component, in plain CSS
-  static styles = style;
+  //static styles = style;
 
   // Render the UI as a function of component state
   render() {
