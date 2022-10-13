@@ -19,7 +19,12 @@
         "baseHref": "/",
         "polyfills": "packages/home/src/polyfills.ts",
         "styles": ["packages/home/src/styles.scss"],
-        "scripts": []
+        "scripts": [
+          {
+            "input": "./custom-webpack.config.js",
+            "inject": false
+          }
+        ]
       },
       "configurations": {
         "production": {
