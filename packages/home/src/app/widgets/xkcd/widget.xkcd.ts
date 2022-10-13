@@ -25,12 +25,12 @@ export class WidgetXkcd extends LitElement {
   `;
 
   render() {
-    console.log(this.json)
+    //console.log(this.json)
     
 
     return html`
       <div class="widget--container">
-        asd
+        xkcd
       </div>
       `;
   }
@@ -39,11 +39,11 @@ export class WidgetXkcd extends LitElement {
     // welp this project gt stopped by CORs :/
     await fetch('https://xkcd.com/info.0.json', { mode: 'no-cors' }) //https://xkcd.com/614/info.0.json (comic #614)
       .then((response) => {
-        console.log(response.text())
+        //console.log(response.text())
         return response.text();
       })
       .then((data) => {
-        console.log(data)
+        //console.log(data)
         return data;
       });
   }
