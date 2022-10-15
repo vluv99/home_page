@@ -1,6 +1,6 @@
-import './widget.weather.scss';
-import '../widget.scss';
-import { IWidget, WidgetType } from '../widget.interface';
+//import './widget.weather.scss';
+//import '../widget.scss';
+
 import { IconPaths } from '../../icon/app-icon';
 export class WidgetWeather extends HTMLElement {
   public static observedAttributes = [];

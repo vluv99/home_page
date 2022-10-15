@@ -189,7 +189,7 @@ export class WidgetClock extends LitElement {
 
 
   render() {
-
+    console.log(style);
     return html`
         <div class="widget--container">
           <div  class="clock">
@@ -328,4 +328,3 @@ function animatorLoop(time, digits, blocks, numbers) {
   }, 1000);
 }
 
-*/

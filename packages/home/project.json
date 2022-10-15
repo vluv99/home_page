@@ -20,7 +20,7 @@
         "polyfills": "packages/home/src/polyfills.ts",
         "styles": ["packages/home/src/styles.scss"],
         "scripts": [ ],
-        "webpackConfig": "./custom-webpack.config.js"
+        "webpackConfig": "packages/home/webpack.config.js"
       },
       "configurations": {
         "production": {
