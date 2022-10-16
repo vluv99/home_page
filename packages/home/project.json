@@ -20,7 +20,12 @@
         "polyfills": "packages/home/src/polyfills.ts",
         "styles": ["packages/home/src/styles.scss"],
         "scripts": [ ],
-        "webpackConfig": "packages/home/webpack.config.js"
+        "webpackConfig": "packages/home/webpack.config.js",
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "packages/home/src/"
+          ]
+        }
       },
       "configurations": {
         "production": {

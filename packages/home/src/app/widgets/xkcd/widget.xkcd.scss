@@ -1,2 +1,7 @@
 @import "../../../styles.scss";
+@import "app/widgets/widget.scss";
 
+
+.widget--container{
+    background-color: red;
+}

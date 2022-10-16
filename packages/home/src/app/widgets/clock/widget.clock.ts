@@ -1,4 +1,5 @@
 import './widget.clock.scss';
+
 export class WidgetClock extends HTMLElement {
   public static observedAttributes = [];
 
@@ -327,4 +328,4 @@ function animatorLoop(time, digits, blocks, numbers) {
       digits[s].classList.add("second");
   }, 1000);
 }
-
+*/
