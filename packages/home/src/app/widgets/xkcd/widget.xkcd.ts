@@ -1,6 +1,8 @@
 import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
+import {until} from 'lit/directives/until.js';
+
 import styles from './widget.xkcd.scss?lit';
 
 @customElement('widget-xkcd')
@@ -8,7 +10,7 @@ export class WidgetXkcd extends LitElement {
 
   
   public get json() {
-    return /*await?*/ this.fetchComic();
+    return this.fetchComic();
   }
   
   static styles =  styles;
@@ -19,22 +21,16 @@ export class WidgetXkcd extends LitElement {
 
     return html`
       <div class="widget--container">
-        xkcd
+        <div>XKCD ${until(this.fetchComic().then((d)=>html`${d.num}`), html``)} </div>
+        ${until(this.fetchComic().then((d)=>html`<img src=${d.img}>`), html`<span>Loading...</span>`)}
       </div>
       `;
   }
 
   async fetchComic() {
-    // welp this project gt stopped by CORs :/
-    await fetch('https://xkcd.com/info.0.json', { mode: 'no-cors' }) //https://xkcd.com/614/info.0.json (comic #614)
-      .then((response) => {
-        //console.log(response.text())
-        return response.text();
-      })
-      .then((data) => {
-        //console.log(data)
-        return data;
-      });
+
+    const res = await fetch('https://xkcd.now.sh/?comic=latest')
+    return res.json();  
   }
 }
 

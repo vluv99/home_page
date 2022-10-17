@@ -1,6 +1,21 @@
 @import "../widget.scss";
 
 
+* {
+ box-sizing: border-box;
+}
+
 .widget--container{
-    //background-color: red;
+    border-radius: 12px;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.widget--container img{
+    max-width: 100%;
+    //max-height: 100%;
+    object-fit: scale-down;
+    padding: 10px;
+
+    border-radius: 8px;
 }
