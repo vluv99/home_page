@@ -161,21 +161,6 @@ customElements.define('widget-clock', WidgetClock);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*import { LitElement, css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 

@@ -1,13 +1,17 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "files": ["./src/types.d.ts"],
-  "include": [],
-  "references": [ 
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    }
-  ]
+    "extends": "../../tsconfig.base.json",
+    "files": ["./src/types.d.ts"],
+    "include": [],
+    "references": [
+        {
+            "path": "./tsconfig.app.json"
+        },
+        {
+            "path": "./tsconfig.spec.json"
+        },
+        {
+            "path": "./.storybook/tsconfig.json"
+        }
+    ],
+    "exclude": ["**/*.stories.ts", "**/*.stories.js"]
 }

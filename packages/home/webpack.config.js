@@ -31,34 +31,12 @@ module.exports = (config, context) => {
         ],
     });
 
+    /*
     RegExp.prototype.toJSON = RegExp.prototype.toString;
     let data = JSON.stringify(c);
     fs.writeFileSync('student-2.json', data);
 
     console.log(context);
-
-    /*{
-    ...config,
-    module: {
-      ...config.module,
-      rules: [
-        {
-          test: /\.html$/i,
-          use: 'raw-loader',
-        },
-        
-        {
-          test: /\.scss$|\.sass$/,
-          resourceQuery: "?lit",
-          use: ['lit-scss-loader', 'extract-loader'],
-        },
-        ...config.module.rules,
-      ],
-    },
-  };*/
-
-    //console.log(c.module.rules);
-    //console.log(c.module.rules[3]);
-
+    */
     return c;
 };
