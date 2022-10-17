@@ -1,3 +1,6 @@
+@import "../../styles.scss";
+
+
 :root {
     --background: #ffffff40;
 }
@@ -9,5 +12,5 @@
     justify-content: center;
     align-items: center;
     background-color: var(--background);
-    border-radius: 3.45rem;
+    border-radius: 36px;//3.45rem; // 28dp;
 }

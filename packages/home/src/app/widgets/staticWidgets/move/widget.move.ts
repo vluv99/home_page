@@ -6,7 +6,7 @@ export class WidgetMove extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <div class="widget--container">
+      <div class="">
         <app-icon fillColor="white" width="40" iconPath="${IconPaths["people-carry-box"]}"></app-icon>   
       </div>
         `;

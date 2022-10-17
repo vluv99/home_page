@@ -1,6 +1,5 @@
-import { LitElement, css, html } from 'lit';
+import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import '../widget.scss';
 
 import styles from './widget.xkcd.scss?lit';
 
@@ -12,18 +11,7 @@ export class WidgetXkcd extends LitElement {
     return /*await?*/ this.fetchComic();
   }
   
-  static styles = [
-    styles/*, css`
-    .widget--container{
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #ffffff40;
-      border-radius: 3.45rem;
-    }
-  `*/];
+  static styles =  styles;
 
   render() {
     //console.log(this.json)

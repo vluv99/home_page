@@ -1,8 +1,7 @@
-//@use '../widget.scss';
+@import "../widget.scss";
 
-
-widget-static .widget--container {
+.widget--container {
     display:flex;
     justify-content: space-around;
-    background-color: rgb(255, 0, 34);
+    //background-color: red; 
   }

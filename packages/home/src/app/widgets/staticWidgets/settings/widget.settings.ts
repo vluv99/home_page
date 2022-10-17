@@ -6,7 +6,7 @@ export class WidgetSettings extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <div class="widget--container">
+      <div class="">
         <app-icon fillColor="white" width="40" iconPath="${IconPaths['gear']}"></app-icon>   
       </div>
         `;
