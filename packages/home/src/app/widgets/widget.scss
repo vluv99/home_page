@@ -1,9 +1,12 @@
-@import "../../styles.scss";
-
+@import '../../styles.scss';
 
 :root {
-    --background: #ffffff40;
+    --widget-primary-background: #ffffff40;
     --border-radius: 36px;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 .widget--container {
@@ -12,6 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--background);
-    border-radius: var(--border-radius);//3.45rem; // 28dp;
+    background-color: var(--widget-primary-background);
+    border-radius: var(--border-radius); //3.45rem; // 28dp;
+    box-sizing: border-box;
 }
