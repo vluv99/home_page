@@ -3,6 +3,7 @@
 
 :root {
     --background: #ffffff40;
+    --border-radius: 36px;
 }
 
 .widget--container {
@@ -12,5 +13,5 @@
     justify-content: center;
     align-items: center;
     background-color: var(--background);
-    border-radius: 36px;//3.45rem; // 28dp;
+    border-radius: var(--border-radius);//3.45rem; // 28dp;
 }
