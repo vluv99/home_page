@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
 import { until } from 'lit/directives/until.js';
+import { IconPaths } from '../../icon/app-icon';
 
 import styles from './widget.xkcd.scss?lit';
 
@@ -16,18 +17,17 @@ export class WidgetXkcd extends LitElement {
   static styles = styles;
 
   render() {
-    //console.log(this.json)
-
 
     return html`
       <div class="widget--container">
         ${until(this.fetchComic().then((d) =>
         html`
-            <div class="tooltip">XKCD ${d.num}</div>
-            <a target="_blank" href=${d.img} >
+            <h3>XKCD ${d.num} <app-icon fillColor="white" width="25" iconPath="${IconPaths.help}"></app-icon></h3>
+            <!--<div >${d.alt}</div>-->
+            
+            <a target="_blank" href="${d.img}" >
               <img src=${d.img} alt="${d.title}">
             </a>
-            <span class="tooltip-text">${d.alt}</span>
             `),
         html`
           <span>Loading...</span>
