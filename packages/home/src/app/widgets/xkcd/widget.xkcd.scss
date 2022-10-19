@@ -1,28 +1,64 @@
-@import "../widget.scss";
-
+@import '../widget.scss';
 
 * {
- box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.widget--container{
+.widget--container {
     /*border-radius: 12px; */ //material u border radius is 28dp. thats the pixelated version in the generic widget settings
     flex-direction: column;
     justify-content: flex-start;
     padding: 8px;
 
-    & a{
+    & a {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    & img{
-        max-width: 90%;//100%;
+    & img {
+        max-width: 90%; //100%;
         max-height: 100%;
         object-fit: scale-down; //cover?
         //padding: 10px;
-    
-        border-radius: /*var(--border-radius)*/8px;
+
+        border-radius: /*var(--border-radius)*/ 8px;
+    }
+
+    .tooltip-text {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1em;
+        line-height: 1.5em;
+        //visibility: hidden;
+        max-width: 300px;
+        background-color: #00b4ab;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        position: absolute;
+        z-index: 1;
+        bottom: 108%;
+        opacity: 0;
+        transition: 0.3s;
+        transform: translate3d(0px, 20px, 0px);
+        cursor: default;
+    }
+
+    .tooltip-text::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #00b4ab transparent transparent transparent;
+    }
+
+    .tooltip:hover + .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px);
     }
 }

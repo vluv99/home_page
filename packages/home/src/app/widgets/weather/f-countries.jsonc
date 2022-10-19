@@ -1,0 +1,59 @@
+//https://worldpopulationreview.com/country-rankings/countries-that-use-fahrenheit
+[
+  {
+    "country": "United States",
+    "pop2022": "338289.8570"
+  },
+  {
+    "country": "Liberia",
+    "pop2022": "5302.6810"
+  },
+  {
+    "country": "Bahamas",
+    "pop2022": "409.9840"
+  },
+  {
+    "country": "Belize",
+    "pop2022": "405.2720"
+  },
+  {
+    "country": "Micronesia",
+    "pop2022": "114.1640"
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "pop2022": "93.7630"
+  },
+  {
+    "country": "Cayman Islands",
+    "pop2022": "68.7060"
+  },
+  {
+    "country": "Bermuda",
+    "pop2022": "64.1840"
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "pop2022": "47.6570"
+  },
+  {
+    "country": "Turks and Caicos Islands",
+    "pop2022": "45.7030"
+  },
+  {
+    "country": "Marshall Islands",
+    "pop2022": "41.5690"
+  },
+  {
+    "country": "British Virgin Islands",
+    "pop2022": "31.3050"
+  },
+  {
+    "country": "Palau",
+    "pop2022": "18.0550"
+  },
+  {
+    "country": "Montserrat",
+    "pop2022": "4.3900"
+  }
+]

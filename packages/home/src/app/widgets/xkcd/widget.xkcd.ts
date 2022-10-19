@@ -21,16 +21,17 @@ export class WidgetXkcd extends LitElement {
 
     return html`
       <div class="widget--container">
-        <div>XKCD ${until(this.fetchComic().then((d) => html`${d.num}`), html``)} </div>
-        
-        ${until(this.fetchComic().then((d) => 
-          html`
-          <a target="_blank" href=${d.img}>
-            <img src=${d.img} alt="${d.title}">
-          </a>
-          `), 
-          html`<span>Loading...</span>`)}
-        
+        ${until(this.fetchComic().then((d) =>
+        html`
+            <div class="tooltip">XKCD ${d.num}</div>
+            <a target="_blank" href=${d.img} >
+              <img src=${d.img} alt="${d.title}">
+            </a>
+            <span class="tooltip-text">${d.alt}</span>
+            `),
+        html`
+          <span>Loading...</span>
+        `)}
       </div>
       `;
   }
